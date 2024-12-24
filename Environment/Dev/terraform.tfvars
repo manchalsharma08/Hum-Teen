@@ -1,7 +1,7 @@
 db = {
   db1 = {
     name_mss  = "devops-mss"
-    name_rg   = "DEVOPS-RG"
+    name_rg   = "alok-rg"
     location  = "central india"
     name_msdb = "devops-db"
   }
