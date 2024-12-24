@@ -27,7 +27,6 @@ jobs:
          az group create --name alok1-rg --location eastus
          az acr create --resource-group alok1-rg --name alok1acr --sku Basic
          az acr show --name alok1acr --resource-group alok1-rg
-         az acr login -n alok1acr --expose-token
        cwd: '$(System.DefaultWorkingDirectory)'
 
    
