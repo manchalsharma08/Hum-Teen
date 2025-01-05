@@ -1,7 +1,7 @@
 db = {
   db1 = {
     name_mss  = "devops-mss"
-    name_rg   = "alok-rg"
+    name_rg   = "joker-rg"
     location  = "central india"
     name_msdb = "devops-db"
   }
@@ -9,25 +9,25 @@ db = {
 
 rg = {
   rg1 = {
-    name_rg  = "alok-rg"
+    name_rg  = "joker-rg"
     location = "central india"
   }
 }
 
 acr = {
   acr1 = {
-    name_rg  = "alok-rg"
+    name_rg  = "joker-rg"
     location = "central india"
-    name_acr = "alokacr"
+    name_acr = "jokeracr"
   }
 }
 
 k8s = {
   k8s1 = {
-    name_aks = "alok-aks"
-    name_rg  = "alok-rg"
+    name_aks = "joker-aks"
+    name_rg  = "joker-rg"
     location = "central india"
     #  name_node-pool = "JionodePOOL"
-    name_acr = "alokacr"
+    name_acr = "jokeracr"
   }
 }
