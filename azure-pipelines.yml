@@ -1,32 +1,19 @@
-
-
-trigger:
-- main
-
+trigger: none
 pool: default
-
-jobs:
-- job: infraJOB
-  steps:
-   - task: TerraformInstaller@1
-     inputs:
-       terraformVersion: 'latest'
-   - script: |
-       cd Environment\Dev
-       terraform init
-       terraform fmt
-       terraform validate
-       terraform plan
-       terraform apply --auto-approve
-   - task: AzureCLI@0
-     inputs:
-       connectedServiceNameSelector: 'connectedServiceNameARM'
-       connectedServiceNameARM: 'alok-service-con'
-       scriptLocation: 'inlineScript'
-       inlineScript: |
-         az group create --name alok1-rg --location eastus
-         az acr create --resource-group alok1-rg --name alok1acr --sku Basic
-         az acr show --name alok1acr --resource-group alok1-rg
-       cwd: '$(System.DefaultWorkingDirectory)'
-
-   
+stages:
+- stage: stageforinfra
+  displayName: stage for infra create
+  jobs:
+  - job: jobforinfra
+    displayName: job for infra create
+    steps:
+    - task: TerraformInstaller@1
+      inputs:
+        terraformVersion: 'latest'
+    - script: |
+        cd Environment\Dev
+        terraform init
+        terraform fmt
+        terraform validate
+        terraform plan
+        terraform apply
