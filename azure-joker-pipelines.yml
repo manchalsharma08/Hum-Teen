@@ -1,0 +1,19 @@
+trigger: none
+pool: default
+stages:
+- stage: stageforinfra
+  displayName: stage for infra create
+  jobs:
+  - job: jobforinfra
+    displayName: job for infra create
+    steps:
+    - task: TerraformInstaller@1
+      inputs:
+        terraformVersion: 'latest'
+    - script: |
+        cd Environment\Dev
+        terraform init
+        terraform fmt
+        terraform validate
+        terraform plan
+        terraform apply
